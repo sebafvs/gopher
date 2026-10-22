@@ -1,0 +1,12 @@
+# compiled binaries
+gopher-tcp
+gopher-http
+
+# build directories
+cmake-build-*/
+build/
+
+# IDE
+.idea/
+*.swp
+*~
