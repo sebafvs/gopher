@@ -8,10 +8,6 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#ifndef GENERATED_PROFILE_SIZE
-#define GENERATED_PROFILE_SIZE 1
-#endif
-
 static const uint8_t enc_profiles[][GENERATED_PROFILE_SIZE] = {
         // GENERATED_PROFILES_HERE
 };

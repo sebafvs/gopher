@@ -27,12 +27,14 @@ set(COMMON_SOURCES
 set(COMMON_LIBS OpenSSL::Crypto pthread util)
 
 add_executable(gopher-tcp ${COMMON_SOURCES} src/main_tcp.c)
+target_compile_definitions(gopher-tcp PRIVATE GENERATED_PROFILE_SIZE=1)
 target_link_libraries(gopher-tcp ${COMMON_LIBS})
 
 add_executable(gopher-http ${COMMON_SOURCES} src/main_http.c src/net_http.c)
+target_compile_definitions(gopher-http PRIVATE GENERATED_PROFILE_SIZE=1)
 target_link_libraries(gopher-http ${COMMON_LIBS} CURL::libcurl)
 
 add_executable(gopher-http-debug ${COMMON_SOURCES} src/main_http.c src/net_http.c)
-target_compile_definitions(gopher-http-debug PRIVATE DEBUG)
+target_compile_definitions(gopher-http-debug PRIVATE DEBUG GENERATED_PROFILE_SIZE=1)
 target_compile_options(gopher-http-debug PRIVATE -O0 -g)
 target_link_libraries(gopher-http-debug ${COMMON_LIBS} CURL::libcurl)
